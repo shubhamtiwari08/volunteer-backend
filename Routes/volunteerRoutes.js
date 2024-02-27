@@ -20,6 +20,7 @@ Router.get("/", async (req, res) => {
 
 Router.post("/", async (req, res) => {
   try {
+    console.log("working");
     const volunteer = await addVolunteer(req.body);
     res.json({ volunteer });
   } catch (error) {
