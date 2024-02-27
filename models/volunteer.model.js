@@ -1,5 +1,4 @@
-const mongoose = require("mongoose")
-
+const mongoose = require("mongoose");
 
 const volunteerSchema = new mongoose.Schema({
   name: {
@@ -12,7 +11,6 @@ const volunteerSchema = new mongoose.Schema({
   },
   interest: {
     type: String,
-    enum: ["Machine Learning", "Web Development", "Graphic Design", "Digital Art", "UI/UX Design"]
   },
   availability: {
     type: String,
@@ -21,9 +19,8 @@ const volunteerSchema = new mongoose.Schema({
     type: Number,
     required: true,
   },
-})
+});
 
+const Volunteer = mongoose.model("Volunteer", volunteerSchema);
 
-const Volunteer = mongoose.model("Volunteer", volunteerSchema)
-
-module.exports = Volunteer
+module.exports = Volunteer;
