@@ -32,17 +32,21 @@ const addVolunteer = async (volunteer) => {
 // });
 
 const updateVolunteer = async (id, updates) => {
-  console.log(id);
   try {
-    const volunteerToBeUpdated = await Volunteer.findByIdAndUpdate(
+    // Use findByIdAndUpdate directly without saving separately
+    const updatedVolunteer = await Volunteer.findByIdAndUpdate(
       id,
       updates,
-      { new: true },
+      { new: true }
     );
-    const savedList = await volunteerToBeUpdated.save();
-    console.log(savedList);
-    return savedList;
+
+    // Log the updated volunteer for debugging
+    console.log(updatedVolunteer);
+
+    // Return the updated volunteer
+    return updatedVolunteer;
   } catch (e) {
+    // Throw the caught error
     throw e;
   }
 };
