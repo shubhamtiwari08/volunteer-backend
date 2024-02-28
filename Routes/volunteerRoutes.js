@@ -1,5 +1,5 @@
 const express = require("express");
-const app = express;
+const app = express();
 const Router = app.Router();
 
 const {
@@ -24,6 +24,7 @@ Router.post("/", async (req, res) => {
     const volunteer = await addVolunteer(req.body);
     res.json({ volunteer });
   } catch (error) {
+    console.log("working");
     res.status(500).json({ message: error.message });
   }
 });
