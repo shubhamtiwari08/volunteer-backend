@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const Router = app.Router();
+const Router = express.Router();
 
 const {
   getVolunteer,
